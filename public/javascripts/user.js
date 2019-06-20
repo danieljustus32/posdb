@@ -90,7 +90,7 @@ $(document).ready(function () {
             alert(message);
           }
           else {
-            alert("Something terrible happened while saving");
+            alert("Something terrible happened while saving :(");
           } 
         }
       });

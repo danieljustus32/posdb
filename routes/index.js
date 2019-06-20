@@ -10,11 +10,11 @@ var tempCatNum = 0;
 /* GET home page. */
 router.get('/', function(req, res, next) {
   var username = req.session.username;
-  var privledge = req.session.privledge;
+  var privilege = req.session.privilege;
   if(username){
     res.render('index', { user: username,
                           user: username,
-                          privledge: privledge});
+                          privilege: privilege});
   }else{
     res.render('login', { user: username });
   }
@@ -60,13 +60,13 @@ router.get('/gosales', function(req, res, next) {
 
 router.get('/login', function(req, res, next) {
   req.session.username = undefined;
-  req.session.privledge = undefined;
+  req.session.privilege = undefined;
   res.render('login');
 });
 
 router.get('/getProducts/:option?/:page?/:bar?/:criteria?/:force?',function(req,res,next){
   var username = req.session.username;
-  var priv = req.session.privledge;
+  var priv = req.session.privilege;
   var option = req.params.option;
   var page = req.params.page;
   var bar = req.params.bar;
@@ -176,7 +176,7 @@ router.get('/getProducts/:option?/:page?/:bar?/:criteria?/:force?',function(req,
 
 router.get('/getSales/:num/:year/:month?/:day?',function(req,res,next){
   var username = req.session.username;
-  var priv = req.session.privledge;
+  var priv = req.session.privilege;
   var year = req.params.year;
   var num = req.params.num;
   var month = req.params.month;
@@ -247,7 +247,7 @@ router.get('/getSales/:num/:year/:month?/:day?',function(req,res,next){
 
 router.get('/getSalesDetails/:id',function(req,res,next){
   var username = req.session.username;
-  var priv = req.session.privledge;
+  var priv = req.session.privilege;
   var id = req.params.id;
   var rows = [];
   var query;
@@ -293,7 +293,7 @@ router.get('/getSalesDetails/:id',function(req,res,next){
 
 router.post('/update',function(req,res,next){
   var username = req.session.username;
-  var priv = req.session.privledge;
+  var priv = req.session.privilege;
   var data = req.body; //id, name,price,category_id,sku
   ////console.log(data);
   if(username && (priv == "Admin" || priv == "Manager")){
@@ -328,7 +328,7 @@ router.post('/update',function(req,res,next){
 
 router.post('/updateuser',function(req,res,next){
   var username = req.session.username;
-  var priv = req.session.privledge;
+  var priv = req.session.privilege;
   var data = req.body;
   //console.log(data);
   if(username && (priv == "Admin" || priv == "Manager")){
@@ -406,7 +406,7 @@ router.post('/updateuser',function(req,res,next){
 
 router.post('/checkout',function(req,res,next){
   var username = req.session.username;
-  var priv = req.session.privledge;
+  var priv = req.session.privilege;
   var data = req.body;
   ////console.log(data);
   if(username){
@@ -484,7 +484,7 @@ router.post('/checkout',function(req,res,next){
 
 router.post('/update_cat',function(req,res,next){
   var username = req.session.username;
-  var priv = req.session.privledge;
+  var priv = req.session.privilege;
   var data = req.body; //id, name,parent
   ////console.log(data);
   if(username && (priv == "Admin" || priv == "Manager")){
@@ -516,7 +516,7 @@ router.post('/update_cat',function(req,res,next){
 
 router.get('/getCategories/:option?/:format?', function(req, res, next) {
   var username = req.session.username;
-  var priv = req.session.privledge;
+  var priv = req.session.privilege;
   var rows = [];
   var option = req.params.option;
   var format = req.params.format;
@@ -577,7 +577,7 @@ router.get('/getCategories/:option?/:format?', function(req, res, next) {
 
 router.get('/getUsers/:option?', function(req, res, next) {
   var username = req.session.username;
-  var priv = req.session.privledge;
+  var priv = req.session.privilege;
   var rows = [];
   var option = req.params.option;
   var query;
@@ -617,7 +617,7 @@ router.get('/getUsers/:option?', function(req, res, next) {
 
 router.post('/delete/:table', function(req, res, next) {
   var username = req.session.username;
-  var priv = req.session.privledge;
+  var priv = req.session.privilege;
   var data = req.body;
   var option = req.params.table;
   if(username && (priv == "Admin" || priv == "Manager")){
@@ -673,7 +673,7 @@ router.post('/signin', function(req, res, next) {
           if(row){
             req.session.username = row.fname+" "+row.lname;
             req.session.user_id = user_id;
-            req.session.privledge = row.job_title_name;
+            req.session.privilege = row.job_title_name;
             res.redirect("/");
             //console.log(this);
           }else{

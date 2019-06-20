@@ -1,21 +1,28 @@
 nav.navbar.navbar-fixed-top.navbar-inverse
   div.container-fluid
     div.navbar-header
-      a.navbar-brand(href='#',class='goHome') POSDB
+    - if(privilege == "Admin" || privilege == "Manager")
+      a.navbar-brand(href='#',class='goHome')
+        img.logo(src='images/logo-white.png')
+    - else
+      div.navbar-brand
+        img.logo(src='images/logo-white.png')
     div#navbar.navbar-collapse.collapse
       ul.nav.navbar-nav
-        li
-          a(href='#',class='goHome') Home
-        li
-          a(href='#',class='goProduct') Product
+        - if(privilege == "Admin" || privilege == "Manager")
+          li
+            a(href='#',class='goHome') Home
+        - if(privilege == "Admin")
+          li
+            a(href='#',class='goProduct') Product
       p.navbar-text.navbar-right 
         | Signed in as 
         a#goUserInfo(href='#') #{user}
       ul.nav.navbar-nav.navbar-right
-        - if(privledge == "Admin" || privledge == "Manager")
+        - if(privilege == "Admin")
           li
             a(href='#',class='goUsers') Manage Users
-        - if(privledge == "Admin" || privledge == "Manager" || privledge == "Accountant" )
+        - if(privilege == "Admin" || privilege == "Manager")
           li
             a(href='#',class='goSales') Sales
         li 
