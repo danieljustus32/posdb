@@ -1,12 +1,16 @@
 /*@import url(http://fonts.googleapis.com/css?family=Merriweather+Sans);
 */
 body {
-
+  background: url('../images/lighthouse-pencil-sketch.jpg');
+  background-size: cover;
   padding: 50px;
   /*font: 15px 'Merriweather Sans', 'lucida sans', sans-serif;*/
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background: radial-gradient(transparent 50%,rgba(0,0,0,.3) 100%),linear-gradient(#D77A6B,#d2c09c 60%,#876d54);
-  
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;  
+}
+
+.navbar {
+  background: rgb(76,107,107);
+  background: linear-gradient(180deg, rgba(76,107,107,1) 0%, rgba(28,54,54,1) 64%, rgba(26,45,45,1) 100%);
 }
 
 a {
@@ -28,7 +32,8 @@ a {
 }
 
 .radialBackground{
-  background: radial-gradient(transparent 50%,rgba(0,0,0,.3) 100%),linear-gradient(#D77A6B,#d2c09c 60%,#876d54);
+  background: url('../images/lighthouse-pencil-sketch.jpg');
+  background-size: cover;
 }
 
 .centered {

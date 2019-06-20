@@ -8,8 +8,8 @@ html{
   height: 100%;
 }
 body{
-  &:extend(html);
-  background: radial-gradient(transparent 50%,rgba(0,0,0,.3) 100%),linear-gradient(#D77A6B,#d2c09c 60%,#876d54);
+  background: url('../images/lighthouse-pencil-sketch.jpg');
+  background-size: cover; 
   font:16px 'Hevetica', sans-serif;
   color: #8e8171;
 }
@@ -19,7 +19,7 @@ body{
 }
 
 .login{
-  margin:30px auto;
+  margin:80px 60% 15px 15%;
   width: 300px;
   height: 420px;
   background: #fff;
@@ -45,8 +45,13 @@ form{
 span{
   margin-left: 5px;
 }
+.login-logo{
+  height: 2rem;
+  width: auto;
+  margin-bottom: 10px;
+}
 div.pass{
-  margin-bottom:40px;
+  margin-bottom:20px;
 }
 input{
   padding: 10px;
@@ -55,13 +60,12 @@ input{
   height: 46px;
   overflow: hidden;
   margin-bottom: 20px;
-
 }
 .submit{
   width: 100px;
 }
 .icon{
-  height: 46px;
+  height: 36px;
   width: 26px;
   display: inline-block;
  

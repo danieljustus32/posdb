@@ -11,19 +11,19 @@ nav.navbar.navbar-fixed-top.navbar-inverse
       ul.nav.navbar-nav
         - if(privilege == "Admin" || privilege == "Manager")
           li
-            a(href='#',class='goHome') Home
+            a(href='#',class='goHome') Register
         - if(privilege == "Admin")
           li
-            a(href='#',class='goProduct') Product
+            a(href='#',class='goProduct') Products
       p.navbar-text.navbar-right 
         | Signed in as 
         a#goUserInfo(href='#') #{user}
       ul.nav.navbar-nav.navbar-right
         - if(privilege == "Admin")
           li
-            a(href='#',class='goUsers') Manage Users
+            a(href='#',class='goUsers') Manage Employees
         - if(privilege == "Admin" || privilege == "Manager")
           li
-            a(href='#',class='goSales') Sales
+            a(href='#',class='goSales') History
         li 
           a(href='/login') Logout

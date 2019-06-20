@@ -72,12 +72,12 @@ $(document).ready(function() {
   var changeNotifier = function(year,month,day){
     var str = year;
     if(month){
-      str += ", "+m[month-1];
+      str = m[month-1] + " " + year;
     }
     if(day){
-      str += ", "+day;
+      str = m[month-1] + " " + day + ", " + year;
     }
-    $("#resultDate").text("For the period of "+str);
+    $("#resultDate").text("Results for the period of "+str);
   }
 
   var getFormattedDateSQL = function(date) {

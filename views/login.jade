@@ -3,15 +3,16 @@ extends layout
 block content
   link(rel='stylesheet', href='/stylesheets/login.css')
   div.login
-    div.title Login to your account
+    div.title
+      img.login-logo(src='images/logo-black.png')
+      p.text-center Log in
     form(action='/signin',method='post')
       div.input
-        -if(error)
+        - if(error)
           div.alert.alert-danger(role="alert")
             span.glyphicon.glyphicon-exclamation-sign(aria-hidden="true")
               span.sr-only Error
-
-              |Login Unsuccessful
+              | Login Unsuccessful
         div.icon
           i(class="fa fa-user")
         input(placeholder="employee number", type="text", name="username")

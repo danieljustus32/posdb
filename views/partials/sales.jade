@@ -10,6 +10,7 @@ div.row
       div.no-guter.col-md-4
         div.row
           div#datepicker
+      - if(privilege == "Admin")
         div.row
           div.box
             div.box__header
@@ -45,5 +46,5 @@ div.row
       div.clear
       hr
       div.pnlSaleDetails
-        i Pick a transaction from the left, if no transactions exit, you can use the date picker to select a period: year, month, or exact day of sale
+        i Pick a transaction from the left. If no transactions exist in the currently selected period, you can use the date picker to select a new one. Choose the year, month, or exact day of sale
 div.sales-modal 
